@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"name": "Project 4",
+			"path": ".."
+		},
+		{
+			"name": "commerce",
+			"path": "../../Project 2/commerce"
+		},
+		{
+			"path": "../../Project 1/wiki"
+		},
+		{
+			"path": "../../Project 3/mail"
+		},
+		{
+			"path": "../../JavaScript"
+		},
+		{
+			"path": "../../User Interfaces"
+		},
+		{
+			"path": "../../../../Downloads/src6"
+		}
+	],
+	"settings": {}
+}

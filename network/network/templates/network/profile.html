@@ -1,0 +1,65 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+    <h2>{{ view_profile.user.username }}</h2>
+
+    <div class="box" style="width: 50%;">
+        <div style="display: flex; flex-direction: row; justify-content: space-around">
+            <div id="follow-count">Followers: {{ view_profile.followers.count }}</div>
+            <div>Following: {{ view_profile.following.count }}</div>
+            {% if user.is_authenticated and user.username != view_profile.user.username %}
+            
+                <div class="follow-btn-div">
+                    {% if user not in view_profile.followers.all %}
+                        <button style="display:block;" data-username="{{view_profile.user.username}}" data-follow_status="follow" class="btn-follow" id="follow-btn">Follow</button>
+                    {% else %}
+                        <button style="display:block;" data-username="{{view_profile.user.username}}" data-follow_status="unfollow" class="btn-follow" id="unfollow-btn">Unfollow</button>
+                    {% endif %}
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+    
+    <div id="all_posts">
+
+        {% for post in posts %}
+
+            <div class="post box">
+                <h5><a href="{% url 'profile' post.poster %}">{{ post.poster }}</a></h5>
+                <div id="message-{{post.id}}" style="margin-bottom: 5px">{{ post.message }}</div>
+
+                {% if post.poster == user.username %}
+                    <a href="#" class="edit-link" id="edit-{{post.id}}" data-id="{{post.id}}">Edit Post</a>
+                {% endif %}
+
+                <div class="text-secondary">{{ post.timestamp }}</div>
+                <div style="display: flex; flex-direction: row;">
+                    <div id="like-div-{{ post.id }}" style="padding-right: 5px">
+                        {% if user.profile in post.likes.all %}
+                            <img src="/static/network/like.svg" style="display:block;" data-id="{{post.id}}" data-like_status="unlike" class="btn-like" id="unlike-btn-{{post.id}}">
+                        {% else %}
+                            <img src="/static/network/unlike.svg" style="display:block;" data-id="{{post.id}}" data-like_status="like" class="btn-like" id="like-btn-{{post.id}}">
+                        {% endif %}
+                    </div>
+                    <div class="text-secondary" id="like-count-{{post.id}}">{{ post.like_count }}</div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+    <div class="pagination">
+
+        {% if posts.has_previous %}
+            <li class="page-item previous"><a href="?page={{ posts.previous_page_number }}" class="page-link">Previous</a></li>
+        {% endif %}
+        {% if posts.has_next %}
+            <li class="page-item next"><a href="?page={{ posts.next_page_number }}" class="page-link">Next</a></li>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
