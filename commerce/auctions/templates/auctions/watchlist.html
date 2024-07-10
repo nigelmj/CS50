@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 style="margin-left: 10px;">My Watchlist</h2>
+
+    {% for listing, price, bid_name in listings_info %}
+        <a href="{% url 'listing' listing.id %}"><div class="listing">
+            <div class="img_div">
+                {% if listing.image %}
+                    <img src="{{ listing.image.url }}" alt="{{ listing.item_name }}" class="listing_image">
+                {% endif %}
+            </div>
+            <div class="listing_info">
+                <h3>{{ listing.item_name }}</h3>
+                <h6 style="font-weight: normal;">{{ listing.description }}</h6>
+                <h5> {{ bid_name }} Bid: ${{ price }}</h5>
+            </div>
+        </div></a>
+    {% endfor %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-info message" role="alert">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    
+{% endblock %}

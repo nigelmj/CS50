@@ -1,0 +1,9 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <form action="{% url 'new' %}" method="post" enctype="multipart/form-data" class="form newf">
+        {% csrf_token %}
+        {{ listing }}
+        <input type="submit" class="btn btn-primary" id="crte_list" value="Create Listing">
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <ul class="nav cat_list">
+        <li class="nav-item">
+            <a class="btn btn-primary cat_link" href="{% url 'categories' %}">All</a>
+        </li>
+        {% for code, name in categories %}
+            <li class="nav-item">
+                    <a class="btn btn-outline-primary cat_link" href="{% url 'category' code %}">{{name}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% for listing, price, bid_name in listings_info %}
+        <a href="{% url 'listing' listing.id %}"><div class="listing">
+            <div class="img_div">
+                {% if listing.image %}
+                    <img src="{{ listing.image.url }}" alt="{{ listing.item_name }}" class="listing_image">
+                {% endif %}
+            </div>
+            <div class="listing_info">
+                <h3>{{ listing.item_name }}</h3>
+                <h6 style="font-weight: normal;">{{ listing.description }}</h6>
+                <h5> {{ bid_name }} Bid: ${{ price }}</h5>
+            </div>
+        </div></a>
+    {% endfor %}
+    
+{% endblock %}
