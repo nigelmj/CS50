@@ -1,0 +1,255 @@
+html {height: 100%;}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 400px;
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #202124;
+    background: #fff;
+    display: block;
+}
+
+div {
+    display: block;
+}
+
+a {text-decoration: none;}
+
+a:hover, a:active {text-decoration: underline;}
+
+a:any-link {cursor: auto;}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.m-div {
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+.div1 {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    height: 60px;
+    justify-content: right;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    float: right;
+    padding-left: 32px;
+    box-sizing: border-box;
+    height: 48px;
+    line-height: normal;
+    padding: 0 4px;
+    flex: 0 0 auto;
+    font: 13px Roboto,RobotoDraft,Arial,sans-serif;
+    }
+
+.link {
+    color: #202124;
+    display: inline-block;
+    padding-left: 15px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+#Adv {
+    background-color: #4d90fe;
+    border: 1px solid #3079ed;
+    color: White;
+    font-size: 11px;
+    padding: 6px 12px 6px 12px;
+    border-radius: 2px;
+    margin-right: 14px;
+    font-weight: bold;
+}
+
+#Adv:hover {
+    background-color: #357ae8;
+    background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+    border: 1px solid #2f5bb7;
+    border-image: initial;
+}
+.div2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 92px;
+    max-height: 290px;
+    height: calc(100% - 560px);
+}
+
+.divlogo {
+    max-height: 92px;
+    position: relative;
+    height: 100%;
+    margin-top: auto;
+}
+
+#logo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    width: auto;
+    height: 92px;
+    aspect-ratio: auto 272 / 92;
+}
+
+#img {
+    color: #4285f4;
+    font: 16px/16px roboto-regular, arial, sans-serif;
+    position: absolute;
+    left: 215px;
+    bottom: 0;
+    white-space: nowrap;
+}
+.div3 {
+    padding: 20px;
+    max-height: 160px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.main-search {
+    margin: 0 auto;
+    width: 640px;
+    padding-top: 6px;
+    width: auto;
+    max-width: 584px;
+    position: relative;
+}
+
+.s-bar {
+    display: flex;
+    z-index: 3;
+    height: 44px;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    border-radius: 24px;
+    margin: 0 auto;
+    width: auto;
+    max-width: 584px;
+}
+
+.s-bar:hover {
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+}
+
+.sbd {
+    flex: 1;
+    display: flex;
+    padding: 5px 8px 0 14px;
+}
+
+.s-icon {
+    display: flex;
+    align-items: center;
+    padding-right: 13px;
+    margin-top: -5px;
+    fill: #9aa0a6;
+}
+#search {
+    color: #9aa0a6; 
+    fill: currentColor;
+}
+.s-input {
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.87);
+    word-wrap: break-word;
+    outline: none;
+    display: flex;
+    flex: 100%;
+    height: 34px;
+    font-size: 16px;
+}
+
+.but {
+    flex: 0 0 auto;
+    padding-right: 13px;
+    height: 44px;
+    width: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    align-items: flex-start;
+    text-align: center;
+}
+.s-but {
+    background: none;
+    color: #4285f4;
+    fill:  currentColor;
+    height: 24px;
+    width: 24px;
+    margin: auto;
+}
+.s-buttons {
+    display: flex;
+    flex-direction: row;
+    height: 70px;
+    justify-content: center;
+    padding-top: 18px;
+}
+
+.sub {
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+}
+
+.sub:hover {
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background-color: #f8f9fa;
+    border: 1px solid #dadce0;
+    color: #202124;
+}
+
+.sub:focus {
+    border: 1px solid #4285f4;
+    outline: none;
+}
+
+.div4 {flex-grow: 1;}
+
+.div5 {background: #f2f2f2;}
+
+.bottom {padding: 0 20px;}
+
+.b-links {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blin {
+    color: #70757a;
+    display: block;
+    padding: 15px;
+    white-space: nowrap;
+}
