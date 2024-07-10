@@ -1,0 +1,13 @@
+.env
+
+venv
+
+.DS_Store
+
+**/__pycache__
+
+# Database
+db.sqlite3
+
+# Assets
+**/media
