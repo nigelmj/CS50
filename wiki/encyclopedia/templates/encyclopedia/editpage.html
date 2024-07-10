@@ -1,0 +1,17 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Edit Entry
+{% endblock %}
+
+{% block body %}
+    <div class="head">
+        <h2 style="margin: 0px 0px 15px -5px;">Edit the Entry '{{ title }}'</h2>
+        <p>Write the contents of the entry using Markdown. The basic guide to Markdown is given <a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">here</a>.</p>
+    </div>
+    <form action="{% url 'encyclopedia:edit' title_name=title %}" method="post" class="form editf">
+        {% csrf_token %}
+        {{ eform }}</textarea>
+        <input type="submit" value="Save Page" id="sub">
+    </form>
+{% endblock %}

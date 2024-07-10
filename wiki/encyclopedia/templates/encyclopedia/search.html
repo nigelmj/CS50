@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search 
+{% endblock %}
+
+{% block body %}
+    <div class="head">
+        <h2 style="margin-bottom: 15px;">Search results for '{{ query }}'</h2>
+        {% if results %}
+            <ul>
+                {% for result in results %}
+                    <li><a href="http://127.0.0.1:8000/wiki/{{result}}">{{ result }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+        <p style="margin: 10px;">Looks like there are no entries with '{{ query }}'!</p>
+        {% endif %}
+        <p style="margin: 10px;">For a list of all entries, return to <a href="{% url 'encyclopedia:index' %}">Index</a></p>
+    </div>
+{% endblock %}

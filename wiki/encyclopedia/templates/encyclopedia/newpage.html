@@ -1,0 +1,23 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Create New Entry
+{% endblock %}
+
+{% block body %}
+    <div class="head">
+        <h2 style="margin: 0px 0px 15px -5px;">Create a New Entry</h2>
+        <p style="margin-bottom: 2px;">Please note that both the title and the content are required.</p>
+        <p>Write the contents of the entry using Markdown. The basic guide to Markdown is given <a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">here</a>.</p>
+    </div>
+    <form action="{% url 'encyclopedia:new' %}" method="post" class="form newf">
+        {% csrf_token %}
+        {{ nform }}
+        <input type="submit" value="Save Page" id="sub">
+    </form>
+    {% if messages %}
+        {% for msg in messages %}
+            <div class="alert alert-danger" role="alert">{{ msg|linebreaks }}</div> 
+        {% endfor %}
+    {% endif %} 
+{% endblock %}
